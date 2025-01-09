@@ -56,10 +56,10 @@ const StockForm = ({ addStock, updateStock, editStock }) => {
   };
 
   return (
-    <form className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-full mx-auto mt-6">
-      <h3 className="text-xl font-bold mb-4 dark:text-white">Add Stock</h3>
+    <form className="bg-black dark:bg-gray-800 p-6 rounded-lg shadow-md w-full mx-auto mt-6">
+      <h3 className="text-xl font-bold mb-4 dark:text-white text-white">Add Stock</h3>
       <div className="mb-4">
-        <label className="block text-gray-700 dark:text-gray-300 mb-2">
+        <label className="block text-gray-700 dark:text-gray-300 mb-2 text-white">
           Stock Symbol
         </label>
         <input
@@ -73,7 +73,7 @@ const StockForm = ({ addStock, updateStock, editStock }) => {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 dark:text-gray-300 mb-2">
+        <label className="block text-gray-700 dark:text-gray-300 mb-2 text-white">
           Bought Price
         </label>
         <input
@@ -86,7 +86,7 @@ const StockForm = ({ addStock, updateStock, editStock }) => {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 dark:text-gray-300 mb-2">
+        <label className="block text-white dark:text-gray-300 mb-2">
           Quantity
         </label>
         <input

@@ -187,7 +187,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="container mx-auto mt-10">
+    <div className="container mx-auto mt-10 bg-black ">
       {isConfirmModalVisible && (
         <ConfirmationModal
           onConfirm={handleConfirmDelete}
@@ -195,8 +195,8 @@ const Dashboard = () => {
         />
       )}
 
-      <div className="flex flex-row justify-between">
-        <h2 className="text-3xl font-sans dark:text-slate-100">Dashboard</h2>
+      <div className="flex flex-row justify-between bg-black ">
+        <h2 className="text-3xl font-sans dark:text-slate-100 text-white">Dashboard</h2>
         <div className="relative">
           <button
             onClick={toggleOverlay}
@@ -234,12 +234,12 @@ const Dashboard = () => {
       </div>
 
       <div className="border-2 rounded-2xl p-10 mt-5 dark:text-white">
-        <div className="flex justify-around">
+        <div className="flex justify-around text-white">
           <div className="flex flex-col">
             <p className="text-2xl">{`$${getInvestedValue().toFixed(2)}`}</p>
             <p>Invested Value</p>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col text-white">
             <p className="text-2xl">{`$${currentValue.toFixed(2)}`}</p>
             <p>Current Value (updates after every 10 seconds)</p>
           </div>
@@ -249,17 +249,17 @@ const Dashboard = () => {
         <div>
           {/* Table for stock holdings */}
           {stockHoldings.length === 0 ? (
-            <p className="text-center">No stocks in your portfolio</p>
+            <p className="text-center ">No stocks in your portfolio</p>
           ) : (
             <table className="min-w-full table-auto">
               <thead>
                 <tr className="text-left">
-                  <th className="font-bold py-2 px-4">Company Name</th>
-                  <th className="font-bold py-2 px-4">Symbol</th>
-                  <th className="font-bold py-2 px-4">Bought Price</th>
-                  <th className="font-bold py-2 px-4">Current Price</th>
-                  <th className="font-bold py-2 px-4">Quantity</th>
-                  <th className="font-bold py-2 px-4">Total Investment</th>
+                  <th className="font-bold py-2 px-4 text-white">Company Name</th>
+                  <th className="font-bold py-2 px-4 text-white">Symbol</th>
+                  <th className="font-bold py-2 px-4 text-white">Bought Price</th>
+                  <th className="font-bold py-2 px-4 text-white">Current Price</th>
+                  <th className="font-bold py-2 px-4 text-white">Quantity</th>
+                  <th className="font-bold py-2 px-4 text-white">Total Investment</th>
                 </tr>
               </thead>
               <tbody>
@@ -267,7 +267,7 @@ const Dashboard = () => {
                   .filter((stock) => stock !== undefined)
                   .map((stock, index) => (
                     <tr key={index} className="border-t my-10">
-                      <td className="py-2 px-4 flex flex-row justify-between">
+                      <td className="py-2 px-4 flex flex-row justify-between text-white">
                         {stocksProfiles[stock.id.stockSymbol]?.name ||
                           "INVALID COMPANY" + " "}
                         <button
@@ -277,14 +277,14 @@ const Dashboard = () => {
                           edit
                         </button>
                       </td>
-                      <td className="py-2 px-4">{stock.id.stockSymbol}</td>
-                      <td className="py-2 px-4">{stock.boughtPrice}</td>
-                      <td className="py-2 px-4">
+                      <td className="py-2 px-4 text-white">{stock.id.stockSymbol}</td>
+                      <td className="py-2 px-4 text-white">{stock.boughtPrice}</td>
+                      <td className="py-2 px-4 text-white">
                         ${currentStocks[stock.id.stockSymbol]?.c || "0"}
                       </td>
-                      <td className="py-2 px-4">{stock.quantity}</td>
+                      <td className="py-2 px-4 text-white ">{stock.quantity}</td>
                       <td className="py-2 px-4">
-                        <div className="flex flex-row justify-between">
+                        <div className="flex flex-row justify-between text-white">
                           <p>
                             $
                             {(

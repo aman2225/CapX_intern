@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 const DashboardStockCard = ({
   id,
@@ -22,7 +22,7 @@ const DashboardStockCard = ({
       </div>
       <div className="text-gray-700 dark:text-gray-300">
         <p>
-          <span className="font-medium">Bought Price: </span>₹
+          <span className="font-medium text-white ">Bought Price: </span>₹
           {boughtPrice.toFixed(2)}
         </p>
         <p>
