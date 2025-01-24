@@ -7,23 +7,23 @@ const Card = () => {
         <div className="container">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 bg-gray-2">
             <SingleCard
-              image="https://i.ibb.co/r2zns1m/image-01.jpg"
-              CardTitle="50+ Best creative website themes & templates"
+              image="src\\assets\\image6.jpg"
+              CardTitle="Start your journey toward a beautiful and functional website today"
               titleHref="/#"
               btnHref="/#"
-              CardDescription="Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit."
+              CardDescription="This inspires action, framing the templates as the first step toward a professional, user-friendly website."
               Button="View Details"
             />
             <SingleCard
-              image="https://i.ibb.co/0nbbWM9/image-02-1.jpg"
-              CardTitle="Creative Card Component designs graphic elements"
-              CardDescription="Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit."
+              image="src\\assets\\image7.png"
+              CardTitle="Learn how to grow your wealth with the right stock market strategies."
+              CardDescription="This appeals to the user's desire for financial growth and actionable advice."
               Button="View Details"
             />
             <SingleCard
-              image="https://i.ibb.co/dL9fH7N/image-03-1.jpg"
-              CardTitle="The ultimate UX and UI guide to card design"
-              CardDescription="Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit."
+              image="src\\assets\\image8.jpg"
+              CardTitle="The Art of Patience in Investing"
+              CardDescription="Your success in investing will depend in part on your character and guts, and in part on your ability to realize that, at times, the best thing to do is nothing."
               Button="View Details"
             />
           </div>

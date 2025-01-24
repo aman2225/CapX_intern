@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const C = ({ start }) => {
   return (
-    <Carousel fade>
+    <Carousel interval={1300} fade>
       {start.map((item, index) => (
         <Carousel.Item key={index}>
           <img

@@ -11,7 +11,7 @@ const DashboardStockCard = ({
   const totalInvestment = (boughtPrice * quantity).toFixed(2);
 
   return (
-    <div className="flex flex-col bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+    <div className="flex flex-col bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 ">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
           {stockSymbol}
