@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: capx-backend
+    runtime: docker
+    buildCommand: ./gradlew build
+    startCommand: java -jar build/libs/demo-0.0.1-SNAPSHOT.jar # Update the JAR file name as needed
+    plan: free
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-cu8fcjpopnds73d5j2c0-a.singapore-postgres.render.com/capx_backend
+      - key: SPRING_DATASOURCE_USERNAME
+        value: capx_backend_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: Pag0wjn3yzZDC4NCUwAsQdkDL3NVQJTk
