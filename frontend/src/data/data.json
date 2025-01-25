@@ -1,11 +1,11 @@
 {
 "banner": {
     "start": [
-          "src\\assets\\image2.jpg",
-          "src\\assets\\image1.jpg",
-          "src\\assets\\image3.jpg",
-          "src\\assets\\image4.jpg",
-          "src\\assets\\image5.jpg"
+          "image2.jpg",
+          "image1.jpg",
+          "image3.jpg",
+          "image4.jpg",
+          "image5.jpg"
         ]
     }
 
