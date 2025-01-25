@@ -45,7 +45,7 @@ export default function Example() {
             <div className="flex shrink-0 items-center">
               <img
                 alt="Your Company"
-                src="src\\assets\\CapxLogo.webp"
+                src="CapxLogo.webp"
                 className="h-8 w-auto"
               />
             </div>
