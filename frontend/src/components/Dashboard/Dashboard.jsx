@@ -502,7 +502,7 @@ const Dashboard = () => {
       });
 
       setStockHoldings(sortedStockHoldings);
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [stockHoldings, currentStocks]);
@@ -570,7 +570,7 @@ const Dashboard = () => {
           </div>
           <div className="flex flex-col">
             <p className="text-2xl text-white">{`$${currentValue.toFixed(2)}`}</p>
-            <p className="text-white">Current Value (updates after every 10 seconds)</p>
+            <p className="text-white">Current Value (updates after every 5 seconds)</p>
           </div>
         </div>
         {/* a horizontal line */}
