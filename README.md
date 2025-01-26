@@ -17,9 +17,6 @@ Access the frontend at https://cap-x-intern.vercel.app/
  npm run dev
 
 ``` 
-2. 
-
-**Backend**
 
 This repository contains the backend API for a **Live Stock Market Portfolio App**, built with **Spring Boot** and deployed on [Render](https://render.com). The API serves as the backend layer for managing stock portfolios, providing real-time stock data, user authentication, and other essential features.
 
@@ -39,11 +36,10 @@ All API endpoints are accessible at:
 ---
 
 ## 🛠️ Tech Stack
-
+- **Frontend**: React with vite, Tailwind CSS.
 - **Backend Framework**: Spring Boot
-- **Database**: PostgreSQL (or your preferred DBMS)
+- **Database**: PostgreSQL
 - **Deployment**: Render.com
-- **Authentication**: JWT (JSON Web Tokens)
 - **APIs Consumed**: Stock market APIs like Finhub
 
 ## Steps to run backend
@@ -56,3 +52,8 @@ cd CapX_intern/backend
 ./mvnw spring-boot:run
 
 ```
+
+## Limitation
+
+1. The free tier of the Finnhub API allows up to 60 requests per minute, meaning stock data updates will pause once this limit is exceeded.
+2. Only stocks listed in the Finnhub API can be added.
