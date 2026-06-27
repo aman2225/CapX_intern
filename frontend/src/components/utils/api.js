@@ -1,6 +1,6 @@
 const FINNCLUB_BASE_URL = "https://finnhub.io/api/v1/";
 const FINNCLUB_TOKEN = "cthgm31r01qtho2pfrtgcthgm31r01qtho2pfru0";
-const DB_URL = import.meta.env.VITE_API_URL || "https://capx-backend-mz02.onrender.com/api/investments";
+const DB_URL = import.meta.env.VITE_API_URL || "https://capx-backend-production-3b1e.up.railway.app/api/investments";
 
 /**
  * Fetch all stock holdings from the backend for a user.
