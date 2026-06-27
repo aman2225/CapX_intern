@@ -33,8 +33,12 @@ const Dashboard = () => {
   // Fetch stock holdings
   const getStockHoldings = async () => {
     const data = await fetchStockHoldings();
-    setStockHoldings(data);
-    if (data.length === 0) {
+    if (data && Array.isArray(data)) {
+      setStockHoldings(data);
+    } else {
+      setStockHoldings([]);
+    }
+    if (!data || data.length === 0) {
       setLoading(false);
     }
   };
@@ -69,22 +73,17 @@ const Dashboard = () => {
     if (res?.ok === false) {
       return;
     }
-    setStockHoldings((prev) => [...prev, stock]);
+    // Refetch from backend to get the saved stock
+    await getStockHoldings();
     setLoading(true);
     toggleOverlay();
   };
 
   const updateStockToDashboard = async (stock) => {
     const res = await updateStock(stock);
-    if (!res.ok) {
-      setStockHoldings((prev) =>
-        prev.map((s) => {
-          if (s.id.stockSymbol === stock.id.stockSymbol) {
-            return stock;
-          }
-          return s;
-        })
-      );
+    if (res?.ok) {
+      // Refetch from backend to get the updated stock
+      await getStockHoldings();
     }
     setLoading(true);
     toggleOverlay();
