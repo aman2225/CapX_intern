@@ -31,7 +31,7 @@ const StockForm = ({ addStock, updateStock, editStock }) => {
       addStock({
         id: {
           userId: 1,
-          stockSymbol: formData.stockSymbol,
+          stockSymbol: formData.stockSymbol.toUpperCase().trim(),
         },
         boughtPrice: parseFloat(formData.boughtPrice),
         quantity: parseInt(formData.quantity),
@@ -46,7 +46,7 @@ const StockForm = ({ addStock, updateStock, editStock }) => {
       updateStock({
         id: {
           userId: 1,
-          stockSymbol: formData.stockSymbol,
+          stockSymbol: formData.stockSymbol.toUpperCase().trim(),
         },
         boughtPrice: parseFloat(formData.boughtPrice),
         quantity: parseInt(formData.quantity),

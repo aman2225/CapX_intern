@@ -47,13 +47,23 @@ const Dashboard = () => {
     const stockSymbols = stockHoldings.map((stock) => stock.id.stockSymbol);
     const data = await Promise.all(
       stockSymbols.map(async (symbol) => {
-        const stock = await fetchStockProfile(symbol);
-        return stock;
+        try {
+          const stock = await fetchStockProfile(symbol);
+          return { symbol, profile: stock };
+        } catch (e) {
+          console.error(e);
+          return { symbol, profile: null };
+        }
       })
     );
     const stockProfilesMap = {};
-    data.map((stock) => {
-      stockProfilesMap[stock.ticker] = stock;
+    data.forEach(({ symbol, profile }) => {
+      if (profile && profile.name) {
+        stockProfilesMap[symbol] = profile;
+        if (profile.ticker) {
+          stockProfilesMap[profile.ticker] = profile;
+        }
+      }
     });
     setStocksProfiles(stockProfilesMap);
     setLoading(false);
@@ -140,23 +150,33 @@ const Dashboard = () => {
       const stockSymbols = stockHoldings.map((stock) => stock.id.stockSymbol);
       const updatedStocks = await Promise.all(
         stockSymbols.map(async (symbol) => {
-          const stock = await fetchStock(symbol);
-          return stock;
+          try {
+            const stock = await fetchStock(symbol);
+            return stock;
+          } catch (e) {
+            console.error(e);
+            return null;
+          }
         })
       );
 
       // Update current value
       const newCurrentValue = updatedStocks.reduce((acc, stock, index) => {
         const updatedStock = stockHoldings[index];
-        return acc + updatedStock.quantity * stock.c;
+        if (stock && typeof stock.c === 'number' && updatedStock) {
+          return acc + updatedStock.quantity * stock.c;
+        }
+        return acc;
       }, 0);
       setCurrentValue(newCurrentValue);
 
       const currentStocksMap = {};
 
-      updatedStocks.map((stock, index) => {
-        const stockSymbol = stockHoldings[index].id.stockSymbol;
-        currentStocksMap[stockSymbol] = stock;
+      updatedStocks.forEach((stock, index) => {
+        if (stock && stockHoldings[index]) {
+          const stockSymbol = stockHoldings[index].id.stockSymbol;
+          currentStocksMap[stockSymbol] = stock;
+        }
       });
       setCurrentStocks(currentStocksMap);
 
